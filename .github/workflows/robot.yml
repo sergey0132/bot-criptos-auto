@@ -1,0 +1,24 @@
+name: Robot Cripto
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'      # Cada media hora
+  workflow_dispatch:          # Botón manual
+
+permissions:
+  contents: write
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: pip install -r requirements.txt
+      - run: python main.py
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto update"
+          file_pattern: "*.db"
