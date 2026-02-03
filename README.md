@@ -20,9 +20,3 @@ El sistema se conecta a la API pública de **CoinGecko**, procesa y limpia los d
 * **Fuente de Datos:** CoinGecko API
 * **Tiempo: ** Datetime
 
-## ⚙️ Instalación y Requisitos
-
-1. **Clonar el repositorio:**
-   ```bash
-   git clone [URL_DE_TU_REPO]
-   cd [NOMBRE_DE_TU_CARPETA]
